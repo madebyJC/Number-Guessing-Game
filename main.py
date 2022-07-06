@@ -19,7 +19,10 @@ sleep(2)
 print(logo_2)
 
 numbers = []
+sleep(1)
 print("Welcome to the Number Guessing Game!")
+sleep(1.5)
+print("I am thinking of a number between 1 and 100.")
 
 for n in range(1, 101):
   numbers.append(n)
@@ -28,17 +31,15 @@ random_num = random.choice(numbers)
 
 def check(num):
   if player_guess < random_num:
-    return "low"
+    return "Too low."
   elif player_guess > random_num:
-    return "high"
+    return "Too high."
   elif player_guess == random_num:
     return "win"
 
 def easy():
   print(random_num)
-  sleep(1)
   print(logo_1)
-  sleep(2)
   print(logo_2)
   player_life = 10
   easy_game_end = True
@@ -47,7 +48,7 @@ def easy():
     print(f"You have {player_life} attempts remaining to guess the number.")
     player_guess = int(input("Make a guess: "))
     result_easy = check(num=player_guess)
-    if result_easy == "low" or result_easy == "high":
+    if result_easy == "Too low." or result_easy == "Too high.":
       player_life -= 1
       print(result_easy)
       if player_life == 0:
@@ -61,9 +62,7 @@ def easy():
 
 def hard():
   print(random_num)
-  sleep(1)
   print(logo_1)
-  sleep(2)
   print(logo_2)
   player_life = 5
   hard_game_end = True
@@ -84,7 +83,6 @@ def hard():
     else: 
       None
 
-  
 player_difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
 if player_difficulty == "easy":
   clear()
