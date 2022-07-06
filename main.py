@@ -38,7 +38,6 @@ def check(num):
     return "win"
 
 def easy():
-  print(random_num)
   print(logo_1)
   print(logo_2)
   player_life = 10
@@ -61,7 +60,6 @@ def easy():
       None
 
 def hard():
-  print(random_num)
   print(logo_1)
   print(logo_2)
   player_life = 5
